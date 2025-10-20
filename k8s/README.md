@@ -1,7 +1,7 @@
 # Task 2: Kubernetes Deployment
 
 **Analyst:** Divya K S  
-**Email:** divya.sekar4428@gmail.com  
+**Email:** divyasekar4428@gmail.com  
 **Date:** 2025-10-20
 
 ## Overview
@@ -146,26 +146,11 @@ curl http://<EXTERNAL-IP>:8080/api/tasks
 ```
 
 ## Screenshots
+![task2](https://github.com/user-attachments/assets/1bb3bef7-a5e9-4707-bb24-0f8492759f3f)
+![task2_2](https://github.com/user-attachments/assets/c0be93f5-85e2-49a2-998b-0069c2149b18)
+![task2_3](https://github.com/user-attachments/assets/d2eb9bb8-4aad-4f8e-9d5d-e7ac454e39c2)
 
-### Kubernetes Cluster Status
-![Kubernetes Cluster](screenshots/k8s-cluster.png)
-*Kubernetes cluster with running pods and services showing kubectl get pods output*
-
-### Pod Creation for Task Execution
-![Pod Creation](screenshots/pod-creation.png)
-*Application creating pods for command execution with Kubernetes events visible*
-
-### Persistent Volume Usage
-![Persistent Volume](screenshots/persistent-volume.png)
-*MongoDB data persisted in persistent volume with PVC status*
-
-### Application Access
-![Application Access](screenshots/app-access.png)
-*Application accessible from host machine with curl commands and responses*
-
-### MongoDB Data Persistence
-![MongoDB Persistence](screenshots/mongodb-persistence.png)
-*MongoDB pod with persistent data surviving pod restarts*
+![task2_4](https://github.com/user-attachments/assets/468417d6-21ec-4a3b-8a69-3a6e5f8980e3)
 
 ## Monitoring and Debugging
 
