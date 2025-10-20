@@ -1,0 +1,35 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: mongodb-pv
+spec:
+  capacity:
+    storage: 1Gi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: "C:/data/mongodb"   # Make sure this folder exists on your host
+  storageClassName: hostpath
+  persistentVolumeReclaimPolicy: Retain
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: mongodb-pv
+spec:
+  capacity:
+    storage: 1Gi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: C:\data\mongodb   # Windows path
+
+
+
+
+
+
+
+
+
+
+

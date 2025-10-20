@@ -1,0 +1,48 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: task-management-api
+  labels:
+    app: task-management-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: task-management-api
+  template:
+    metadata:
+      labels:
+        app: task-management-api
+    spec:
+      containers:
+      - name: task-management-api
+        image: task-management-api:latest
+        ports:
+        - containerPort: 8080
+        env:
+        - name: SPRING_DATA_MONGODB_HOST
+          value: "mongodb-service"
+        - name: SPRING_DATA_MONGODB_PORT
+          value: "27017"
+        - name: SPRING_DATA_MONGODB_DATABASE
+          value: "taskmanagement"
+        - name: SPRING_DATA_MONGODB_USERNAME
+          value: "admin"
+        - name: SPRING_DATA_MONGODB_PASSWORD
+          value: "password"
+        - name: SPRING_DATA_MONGODB_AUTHENTICATION_DATABASE
+          value: "admin"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: task-management-service
+spec:
+  selector:
+    app: task-management-api
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 8080
+      nodePort: 31191    # NodePort to access locally
+  type: NodePort
